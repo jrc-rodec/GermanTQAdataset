@@ -1,0 +1,181 @@
+
+<style>
+  table{
+    width: 100%;
+    border-collapse:collapse;
+  }
+  img {
+    border: 2px solid #555;
+    box-shadow: 5px 5px 5px grey;
+  }
+  .table-wrapper
+  {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .button {
+    background-color: #3d5233; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .button:hover {
+    background-color: #436024; /* Green */
+  }
+
+  input[type='radio'] {
+    width:auto;
+    align-self: center;
+    margin-right: .75em;
+    background:transparent;
+    border:none;
+  }
+
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    align-items: center;
+  }
+
+  .radio{
+    text-align: center;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2;}
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #939393;
+    color: white;
+  }
+  .row {
+    margin: 30px;
+  }
+  .element{
+    margin: 10px;
+  }
+  .info{
+    margin: 10px;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    width: 850px;
+    height: 120px;
+    align-content: center;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+  .opensans {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  div {
+    font-family: "Open Sans", sans-serif;
+    width:800px;
+    margin:0 auto;
+  }
+
+  mat-spinner {
+    stroke: grey;
+    align-self: center;
+  }
+
+  .columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .column {
+    flex: 33.33%;
+    text-align: center;
+  }
+</style>
+
+<div *ngIf="!isLoaded" class="columns">
+  <div class="column">.</div>
+  <div class="column">
+    <p>Loading table data...</p>
+    <mat-spinner style="margin:0 auto;"></mat-spinner>
+  </div>
+  <div class="column">.</div>
+</div>
+
+
+
+<div *ngIf="isLoaded" class="content" role="main">
+
+  <h1>Table Annotator UI</h1>
+
+  <p>Bitte hilf uns dabei, deutsche Tabellen zu annotieren.</p>
+  <p>Im Folgenden werden f&uuml;nf verschieden Tabellenzeilen (aus m&ouml;glicherweise unterschiedlichen Tabellen) angezeigt.</p>
+  <p>Deine Aufgabe ist es nun, eine Frage zu der angezeigten Tabellenzeile zu stellen und die jeweilige Antwort auszuw&auml;hlen.</p>
+  <p>Falls ein Zeile keinen Sinn ergibt, soll man in das Fragenfeld "ung&uuml;ltig" schreiben, sodass solche Zeilen sp&auml;ter gefiltert werden k&ouml;nnen.</p>
+  <p>Falls innerhalb der Tabelle Begriffe abgek&uuml;rzt stehen, sollen sie innerhalb der Frage ausgeschrieben werden. (e.g. Anz. -> Anzahl)</p>
+  <p>Achtung: Die Frage soll spezifisch zu der jeweiligen Tabellenzeile gestellt sein und nicht allgemein auf die Tabelle bezogen!</p>
+  <p><b>Beispiel:</b></p>
+  <p><img style="width: 100%" src="/assets/img.png" alt="image"></p>
+
+  <div ng-app="myApp" ng-controller="mainCtrl">
+
+    <form (ngSubmit)="submitAll()">
+
+        <div class="row" *ngFor="let row of tableRows">
+
+          <h2>{{row!.content!}}</h2>
+
+          <label>Deine Frage</label>
+          <input [(ngModel)]="row!.question" name="question" size="50" class="element">
+
+          <div class="table-wrapper">
+            <table class="element" class="center">
+              <thead>
+              <tr>
+                <th *ngFor="let value of Object.values(row!.rowEntries!)">
+                  {{value.rowName}}
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td *ngFor="let value of Object.values(row!.rowEntries!); let i = index" [attr.data-index]="i">
+                    <label>
+                      <input [disabled]="value == ''" [(ngModel)]="row!.answerColumn" type="radio" [name]="value + ' ' + row!.row  + ' ' + row!.tableId" [value]="value.columnId">
+                      {{value.cellValue}}
+                      <section *ngIf="value == ''">Keine Angabe</section>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--<input [(ngModel)]="row!.answerColumn" name="column" value="0" type="number" min=0 max=99 size="2" class="element">-->
+
+        </div>
+
+      <button class="button" type="submit" style="float: right">Submit</button>
+
+    </form>
+
+  </div>
+
+</div>
+
