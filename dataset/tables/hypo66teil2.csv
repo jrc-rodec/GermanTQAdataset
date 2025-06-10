@@ -1,0 +1,6 @@
+Energieverbrauch in kWh innerhalb der Organisation,2023 Konzern,2023 Bank,2022 Konzern,2022 Bank,2021 Konzern,2021 Bank
+"""gekaufter Strom, Wärme- oder Kühlenergie (kWh)""",2.869.417,2.699.403,3.149.990,2.982.462,3.202.072,3.034.860
+eigene Stromerzeugung (PV-Anlagen) (kWh),386.065,66.356,390.208,72.307,384.835,68.977
+verkaufter Strom (Einspeisung ins lokale Stromnetz) (kWh),320.702,993,317.900,-,315.858,-
+Energieverbrauch innerhalb der Organisation (kWh),4.652.078,4.152.377,5.117.878,4.699.306,5.230.182,4.818.905
+Energieverbrauch innerhalb der Organisation (MJ),16.747.480,14.948.559,18.424.360,16.917.500,18.828.656,17.348.057

@@ -1,0 +1,8 @@
+Sektor (NACE Rev 1),Bruttosaldo in Mio EUR 31122022,Emissionen (t CO2e) - Scope 1,Emissionen (t CO2e) - Scope 2,Emissionen (t CO2e) - Scope 1+2,(t CO2e / MEUR) - Scope 1+2,qualität - PCAF Score (Scope 1+2)
+O - Öffentliche Verwaltung,253,1249,1976,3225,13,4.2
+P -  Erziehung und Unterricht,11,238,46,284,26,4.9
+Q -  Gesundheits- und Sozialwesen,486,3345,4937,8281,17,4.3
+R -  Kunst,88,1427,1182,2609,30,4.2
+S -  Erbringung von sonstigen Dienstleistungen,684,28912,8616,37528,55,4.7
+"""T -  Private Haushalte mit Hauspersonal, Herstellung von Waren und Erbringung von Dienstleistungen durch private Haushalte für den Eigenbedarf ohne ausgeprägten Schwerpunkt""",1176,17235,-,17235,15,4.1
+SUMME,30437,2993593,812679,3806272,125,4.2

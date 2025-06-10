@@ -1,0 +1,8 @@
+Climate Policy Relevant Sectors,Bruttosaldo in Mio EUR 31122022,Finanzierte THG-Emissionen (t CO2e) - Scope 1,Finanzierte THG-Emissionen (t CO2e) - Scope 2,Finanzierte THG-Emissionen (t CO2e) - Scope 1+2 ,THG-Intensität(t CO2e / MEUR) - Scope 1+2,Datenqualität - PCAF Score (Scope 1+2)
+buidlings,9879.0,436241,21234.0,457475,46,4.3
+energy-intensive,3.663,1179779,294.383,1474162,402,3.3
+transportation,2.458,303841,77.502,381343,155,4.2
+agriculture,361.0,204986,7.458,212443,589,4.5
+utility | electricity,230.0,36282,5.312,41594,181,4.1
+fossil-fuel,74.0,19231,3.923,23154,312,4.2
+SUMME,16.665,2180360,409.812,2590171,155,4.1
