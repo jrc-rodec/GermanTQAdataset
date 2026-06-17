@@ -17,3 +17,9 @@ The annoatation tool consists of two subprojects:
 * __backend__ that is responsible for the data processing
 * __frontend__ where a user can input Q&A pairs for a given table row
  The subprojects can be found inside the annoatation_tool folder.
+
+For more detailed information please refer to 
+[A German-Language Dataset and Annotation Tool for Tabular Question Answering](https://aclanthology.org/2025.konvens-2.23/) (Karapandžić & Hellwig, KONVENS 2025)
+
+Please cite as follows  
+Staša Karapandžić and Michael Hellwig. 2025. A German-Language Dataset and Annotation Tool for Tabular Question Answering. In Proceedings of the 21st Conference on Natural Language Processing (KONVENS 2025): Workshops, pages 291–300, Hannover, Germany. HsH Applied Academics.
